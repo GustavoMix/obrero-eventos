@@ -2,8 +2,8 @@ name: Correr Obrero SuperTicket
 
 on:
   schedule:
-- cron: '*/15 * * * *'
-  workflow_dispatch: # Botón para darle "Play" manual
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
 
 jobs:
   build:
