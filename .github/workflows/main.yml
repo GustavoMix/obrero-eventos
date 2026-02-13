@@ -2,9 +2,8 @@ name: Correr Obrero SuperTicket
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '0 16 * * *' # Esto es exactamente las 12:00 PM en Bolivia
   workflow_dispatch:
-
 jobs:
   build:
     runs-on: ubuntu-latest
