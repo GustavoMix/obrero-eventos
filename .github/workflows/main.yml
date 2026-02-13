@@ -1,0 +1,27 @@
+name: Correr Obrero SuperTicket
+
+on:
+  schedule:
+   - cron: '25 15 * * *' # Esto equivale a las 11:25 AM en Bolivia
+  workflow_dispatch: # Botón para darle "Play" manual
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar codigo del repositorio
+        uses: actions/checkout@v3
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Instalar librerias
+        run: pip install -r requirements.txt
+
+      - name: Crear llave de Firebase desde Secret
+        run: echo '${{ secrets.FIREBASE_KEY }}' > serviceAccountKey.json
+
+      - name: Ejecutar Obrero
+        run: python obrero.py
