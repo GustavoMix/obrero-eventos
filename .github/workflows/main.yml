@@ -2,7 +2,7 @@ name: Correr Obrero SuperTicket
 
 on:
   schedule:
-   - cron: '25 15 * * *' # Esto equivale a las 11:25 AM en Bolivia
+   - cron: '28 15 * * *' # Esto equivale a las 11:25 AM en Bolivia
   workflow_dispatch: # Botón para darle "Play" manual
 
 jobs:
